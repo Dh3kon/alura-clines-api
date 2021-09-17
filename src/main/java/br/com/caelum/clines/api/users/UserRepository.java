@@ -1,0 +1,19 @@
+package br.com.caelum.clines.api.users;
+
+import br.com.caelum.clines.shared.domain.User;
+import org.springframework.data.repository.Repository;
+
+import java.util.Collection;
+import java.util.Optional;
+
+public interface UserRepository extends Repository<User, Long> {
+    Collection<User> findAll();
+
+    Optional<User> findByName(String name);
+
+    Optional<User> findById(Long id);
+
+    Optional<User> findByEmail(String email);
+
+    void save(User user);
+}
